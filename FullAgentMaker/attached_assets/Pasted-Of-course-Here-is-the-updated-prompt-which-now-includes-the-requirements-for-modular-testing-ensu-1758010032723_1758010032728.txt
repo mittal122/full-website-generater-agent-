@@ -1,0 +1,54 @@
+Of course. Here is the updated prompt, which now includes the requirements for modular testing, ensuring the downloaded code works locally, and reinforcing the preference for Node.js.
+
+***
+
+### 📌 **Project Title**
+Resilient & Portable AI Web Development Team on Replit
+
+### 📖 **Project Overview**
+This project is an autonomous AI multi-agent system built on Replit that generates a complete, production-ready website or application from a single natural language prompt. The system simulates a professional, interconnected development team where all agents are aware of each other's progress and share a common state. It features a minimalistic, dark-themed UI that feels handcrafted and is designed to be **resilient and portable**, allowing users to resume the generation process from failure and ensuring the final code works perfectly on a local machine. Users must provide their own Gemini API key for all model calls.
+
+***
+
+### ⚙️ **Core Functional Features**
+1.  **Mandatory User API Key**: The system's first step is to securely collect the user's Gemini API key. It will use **only this key** for all subsequent AI model calls, with no default or fallback key hardcoded.
+
+2.  **Interconnected & Dependent Agent Workflow**: The system utilizes a team of specialized agents that are fully interconnected and state-aware. Each agent's work is dependent on the output of the previous one, ensuring a cohesive and context-aware generation process.
+    * **Requirement Agent**: Parses the prompt into a structured project plan.
+    * **Frontend Agent**: Builds the UI based on the plan.
+    * **Backend Agent**: Builds the server-side logic if required.
+    * **Validator Agent**: Reviews and debugs the code from both agents.
+    * **Deployment Agent**: Packages the final, validated project.
+
+3.  **State Persistence & Resumability**: The system **automatically saves its state** after each agent successfully completes its task. If an error occurs or the session is interrupted, the user can resume the process exactly where it left off, preventing the loss of progress.
+
+4.  **Incremental Validation & Testing**: Before passing its output to the next agent, each module generated must be **individually validated to be error-free**. This ensures that each component and function works correctly in isolation, preventing errors from cascading through the workflow.
+
+5.  **Portable Project Packaging**: The final agent organizes the code into a clean project structure designed to be **runnable on any local machine**. It generates a complete `package.json` with all dependencies, startup scripts (`npm start`), and an environment file template (`.env.example`) to guarantee a smooth setup process after download.
+
+***
+
+### 🎨 **UI / Style Guidelines**
+* **Minimalist Dark Matte Aesthetics**: The entire interface will use a sophisticated dark matte color palette, avoiding generic or glossy elements. The design will prioritize clean lines, ample negative space, and a layout that feels intentional and human-designed.
+* **Aesthetic & Legible Typography**: Utilize carefully selected, aesthetic fonts that enhance the user experience and contribute to a premium, non-AI feel.
+* **Subtle & Purposeful UI**: Interaction elements will be intuitive and understated. The focus is on a seamless user flow.
+* **Real-time Logging**: A clean, monospaced font log window will display the live status and clearly indicate saved checkpoints or errors.
+* **Integrated Code Preview**: A file explorer to view the generated code, styled to match the dark matte theme.
+
+***
+
+### 🔧 **Technical Considerations**
+* **State Management**: The system **must implement a robust state management mechanism** (e.g., writing progress to a local `state.json` file or using Replit's DB) to enable the resume-from-failure functionality.
+* **Frontend Stack**: React, Tailwind CSS
+* **Preferred Backend Stack**: **Node.js with Express** is the strongly preferred stack for any required backend development.
+* **Database**: SQLite or MongoDB (based on user request)
+* **AI Model API**: Google Gemini (via the user-provided API key)
+* **Environment**: Must be fully functional within the Replit ecosystem, and the output must be portable to a standard local Node.js environment.
+* **Security**: The user's API key must be handled securely and only used for the duration of the generation process.
+
+***
+
+### 👤 **Optional Features**
+* **Conditional Backend**: The Backend Agent should only be activated if the user's prompt explicitly mentions features requiring server-side logic.
+* **User Authentication**: If requested, the Backend Agent should be able to generate a complete authentication flow.
+* **One-Click Deployment**: Integrate with platform APIs (like Vercel or Netlify) to allow the user to deploy the final application directly from the interface.
